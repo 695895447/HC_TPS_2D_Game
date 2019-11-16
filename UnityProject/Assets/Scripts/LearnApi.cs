@@ -4,6 +4,7 @@ public class LearnApi : MonoBehaviour
 {
     public Transform TransformA;
     public Camera cam;
+    public AudioSource aud;
     // Start is called before the first frame update
     void Start()
     {
@@ -11,8 +12,10 @@ public class LearnApi : MonoBehaviour
         print(Random.Range(1.0f, 100));
         print("\n");
         print(cam.depth);
-        cam.depth = 2;
+        cam.depth = 2;//cam深度
+        TransformA.position = new Vector3(1, 0, 0);//改變位置
 
+        aud.Stop();
     }
 
     // Update is called once per frame
@@ -22,6 +25,7 @@ public class LearnApi : MonoBehaviour
         a = Mathf.PI;
         print(a);*/
 
-        TransformA.position = new Vector3(0, 0, 1);
+        TransformA.position = new Vector3(1, 0, 0);
+        TransformA.Rotate(0, 0, 10);
     }
 }

@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &43629163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,6 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TransformA: {fileID: 2131453244}
   cam: {fileID: 135505746}
+  aud: {fileID: 504899346}
 --- !u!1 &83827869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,6 +1315,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreHeight: 0
+  pipe: {fileID: 7213111011546909019, guid: 40219530e2fd388499d2c7bf1d7c3385, type: 3}
+  x: 1
 --- !u!4 &1498019172
 Transform:
   m_ObjectHideFlags: 0
@@ -1422,7 +1425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834fba632b77ee748a94ce7b90f2fc37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 10
   ground: {fileID: 1558720830}
 --- !u!61 &1558720832
 BoxCollider2D:
