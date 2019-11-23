@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [Header("水管開始的x軸")]
     public float x;
 
+
     // 修飾詞權限：
     // private 其他類別無法使用
     // public 其他類別可以使用
@@ -53,5 +54,6 @@ public class GameManager : MonoBehaviour
     {
         SpawnPipe();
         InvokeRepeating("SpawnPipe", 1f, 1f);
+
     }
 }
