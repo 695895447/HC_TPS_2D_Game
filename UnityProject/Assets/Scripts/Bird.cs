@@ -11,6 +11,8 @@ public class Bird : MonoBehaviour
     [Header("剛體")]
     public Rigidbody2D r2d;
 
+    public GameObject goScore,goGM;//遊戲管理器跟分數
+
     /// <summary>
     /// 小雞跳躍方法。
     /// </summary>
@@ -23,6 +25,8 @@ public class Bird : MonoBehaviour
             print("按了一下");
             r2d.gravityScale=1;//小雞重力
             r2d.AddForce(new Vector2(0,jump));//小雞跳多高
+            goScore.SetActive(true);//顯示分數
+            goGM.SetActive(true);//顯示GM
         }
         //Rigidbody2D.SetRotation(float) 設定角度
         //Rigidbody2D.velocity 加速度(二維向量x,y)
@@ -33,7 +37,7 @@ public class Bird : MonoBehaviour
     /// </summary>
     private void Dead()
     {
-
+        print("死了");
     }
     //一秒一次
     private void Update()
@@ -43,5 +47,13 @@ public class Bird : MonoBehaviour
     private void FixedUpdate()
     {
         Jump();
+    }
+    private void OnCollisionEnter2D(Collision2D hit)
+    {
+        print(hit.gameObject.name);
+        if(hit.gameObject.name=="地板"||hit.gameObject.name=="水管 下"||hit.gameObject.name=="水管 上")
+        {
+            Dead();
+        }
     }
 }
