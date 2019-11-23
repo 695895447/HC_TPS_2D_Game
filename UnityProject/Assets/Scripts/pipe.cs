@@ -3,6 +3,16 @@ public class pipe : Ground
 {
     private void Start()
     {
-        Destroy(gameObject,2f);
+
+    }
+    //在相機外執行一次
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject,1f);
+    }
+        //在相機外執行一次
+    private void OnBecameVisible()
+    {
+
     }
 }

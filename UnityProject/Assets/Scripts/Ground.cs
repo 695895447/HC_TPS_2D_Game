@@ -22,6 +22,10 @@ public class Ground : MonoBehaviour
     /// </summary>
     private void Move()
     {
+        if(GameManager.gameOver)
+        {
+            return;
+        }
         // 地板.位移(x, y, z);
         // Time.deltaTime 每幀的時間
         ground.Translate(-speed * Time.deltaTime, 0, 0);
