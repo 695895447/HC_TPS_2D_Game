@@ -3,7 +3,7 @@
 public class Bird : MonoBehaviour
 {
     [Header("跳躍高度"), Range(10, 2000)]
-    public int jump = 250;
+    public int jump = 200;
     [Header("旋轉角度"),Range(0,100)]
     public float angle=10;
     [Header("是否死亡"), Tooltip("用來判斷角色是否死亡，true 死亡，false 還沒死亡")]
@@ -76,7 +76,8 @@ public class Bird : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D hit3)
     {
-        if(hit3.gameObject.name=="加分")
+        //如果碰到加分區且
+        if(hit3.gameObject.name=="加分" && !dead)
         {
             aud.PlayOneShot(soundAdd,1.5f);//撞墻的聲音
             gm.AddScore();
